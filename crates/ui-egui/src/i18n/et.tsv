@@ -2322,3 +2322,11 @@
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Sisesta suurus mis tahes ühikus, näiteks 5 cm või 300 px. Teine külg muutub kaasa, nii et pilt säilitab oma proportsioonid.
 
 	Import…	Impordi…
+	Vim Keys	Vimi klahvid
+	Vim Keystrokes	Vimi klahvivajutused
+	Vim keys (Normal, Insert and Visual modes)	Vimi klahvid (tavaline, lisamis- ja visuaalne režiim)
+	NORMAL	TAVALINE
+	INSERT	LISAMINE
+	VISUAL	VISUAALNE
+	VISUAL LINE	VISUAALNE RIDA
+	Vim keys are on. Click to turn them off.	Vimi klahvid on sees. Klõpsake nende väljalülitamiseks.

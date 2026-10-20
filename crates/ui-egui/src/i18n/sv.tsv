@@ -2714,3 +2714,11 @@ preview	Title	Titel
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Skriv en storlek i valfri enhet, till exempel 5 cm eller 300 px. Den andra sidan följer med, så att bilden behåller sina proportioner.
 
 	Import…	Importera…
+	Vim Keys	Vim-tangenter
+	Vim Keystrokes	Vim-tangenttryckningar
+	Vim keys (Normal, Insert and Visual modes)	Vim-tangenter (lägena Normal, Infoga och Visuell)
+	NORMAL	NORMAL
+	INSERT	INFOGA
+	VISUAL	VISUELL
+	VISUAL LINE	VISUELL RAD
+	Vim keys are on. Click to turn them off.	Vim-tangenterna är på. Klicka för att stänga av dem.

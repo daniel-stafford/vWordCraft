@@ -47,6 +47,7 @@ pub mod templates;
 pub mod text;
 pub mod tools;
 pub mod view;
+pub mod vim;
 pub mod wordart;
 
 use serde_json::{Value, json};
@@ -100,6 +101,7 @@ pub fn registry() -> Registry {
     v.extend(protect::specs());
     v.extend(speech::specs());
     v.extend(controls::specs());
+    v.extend(vim::specs());
     Registry::new(v)
 }
 

@@ -348,6 +348,10 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
                 _ => {}
             }
         }
+        // Vim keys: Normal and Visual mode take the keys, and Escape leaves Insert mode.
+        if crate::vim::event(app, ctx, &e) {
+            continue;
+        }
         match e {
             egui::Event::Text(t) => {
                 let m = ctx.input(|i| i.modifiers);

@@ -2700,3 +2700,11 @@ template	Letter	Lettre
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Tapez une taille dans n'importe quelle unité, par exemple 5 cm ou 300 px. L'autre côté suit, et l'image garde ses proportions.
 
 	Import…	Importer…
+	Vim Keys	Touches Vim
+	Vim Keystrokes	Frappes Vim
+	Vim keys (Normal, Insert and Visual modes)	Touches Vim (modes Normal, Insertion et Visuel)
+	NORMAL	NORMAL
+	INSERT	INSERTION
+	VISUAL	VISUEL
+	VISUAL LINE	VISUEL LIGNE
+	Vim keys are on. Click to turn them off.	Les touches Vim sont activées. Cliquez pour les désactiver.

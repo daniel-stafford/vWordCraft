@@ -454,6 +454,8 @@ pub struct Session {
     pub read_aloud: crate::speech::ReadAloud,
     /// Preferences the front end saves between runs.
     pub prefs: Prefs,
+    /// Vim keys' mode and unfinished command, when [`Prefs::vim_keys`] is on.
+    pub vim: crate::cmd::vim::Vim,
     /// The system region (#838): the paper a new blank document starts on, the default
     /// measurement unit and the decimal separator. The front end sets it from the platform (the
     /// browser's locale on the web); headless sessions keep `en-US`. A region the user chose
@@ -530,6 +532,8 @@ pub struct Prefs {
     pub insert_key_overtype: bool,
     /// Overtype: typed characters replace the ones after the caret.
     pub overtype: bool,
+    /// Vim keys: Normal, Insert and Visual modes in the document (`vim.toggle`).
+    pub vim_keys: bool,
     /// The unit rulers and dialogs show lengths in, when the user chose one (File › Options ›
     /// Advanced › Measurement units); `None` follows the region ([`Session::units`]). Saved under
     /// a new key; an older `units` value other than inches (the old default) carries over on load.
@@ -564,6 +568,7 @@ impl Default for Prefs {
             typing_replaces_selection: true,
             insert_key_overtype: false,
             overtype: false,
+            vim_keys: false,
             units: Default::default(),
             region: None,
             dictionaries_folder: None,
@@ -644,6 +649,7 @@ impl Session {
             clip_history: Default::default(),
             find: FindState::default(),
             goal_x: None,
+            vim: Default::default(),
             page_hint: 0,
             registry: Arc::new(crate::cmd::registry()),
             author: "WordCraft User".into(),
@@ -1217,6 +1223,8 @@ impl Session {
             // Go Back's places, like the caret history: not part of the document.
             edit_marks: _,
             go_back_step: _,
+            // Vim keys' mode, like the view: not part of the document.
+            vim: _,
         } = self;
         let head = if history.len() + SNAPSHOT_HEAD > MAX_UNDO { history.iter().take(SNAPSHOT_HEAD).cloned().collect() } else { Vec::new() };
         EditSnapshot {

@@ -2704,3 +2704,11 @@ preview	Title	Tytuł
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Wpisz rozmiar w dowolnej jednostce, np. 5 cm lub 300 px. Druga strona dopasuje się, więc obraz zachowa proporcje.
 
 	Import…	Importuj…
+	Vim Keys	Klawisze Vim
+	Vim Keystrokes	Sekwencja klawiszy Vim
+	Vim keys (Normal, Insert and Visual modes)	Klawisze Vim (tryby normalny, wprowadzania i wizualny)
+	NORMAL	NORMALNY
+	INSERT	WPROWADZANIE
+	VISUAL	WIZUALNY
+	VISUAL LINE	WIZUALNY LINIOWY
+	Vim keys are on. Click to turn them off.	Klawisze Vim są włączone. Kliknij, aby je wyłączyć.

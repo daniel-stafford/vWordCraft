@@ -2654,3 +2654,11 @@ preview	Title	Título
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Escribe un tamaño en cualquier unidad, como 5 cm o 300 px. El otro lado se ajusta, así que la imagen conserva sus proporciones.
 
 	Import…	Importar…
+	Vim Keys	Teclas de Vim
+	Vim Keystrokes	Pulsaciones de Vim
+	Vim keys (Normal, Insert and Visual modes)	Teclas de Vim (modos Normal, Insertar y Visual)
+	NORMAL	NORMAL
+	INSERT	INSERTAR
+	VISUAL	VISUAL
+	VISUAL LINE	VISUAL LÍNEA
+	Vim keys are on. Click to turn them off.	Las teclas de Vim están activadas. Haga clic para desactivarlas.

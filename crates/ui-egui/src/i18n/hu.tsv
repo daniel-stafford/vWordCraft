@@ -2695,3 +2695,11 @@
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Írj be egy méretet bármilyen mértékegységben, például 5 cm vagy 300 px. A másik oldal követi, így a kép megtartja az arányait.
 
 	Import…	Importálás…
+	Vim Keys	Vim-billentyűk
+	Vim Keystrokes	Vim-billentyűleütések
+	Vim keys (Normal, Insert and Visual modes)	Vim-billentyűk (Normál, Beszúrás és Vizuális mód)
+	NORMAL	NORMÁL
+	INSERT	BESZÚRÁS
+	VISUAL	VIZUÁLIS
+	VISUAL LINE	VIZUÁLIS SOR
+	Vim keys are on. Click to turn them off.	A Vim-billentyűk be vannak kapcsolva. Kattintson a kikapcsolásukhoz.

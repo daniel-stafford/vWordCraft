@@ -2300,3 +2300,11 @@
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	可用任意单位输入大小，例如 5 cm 或 300 px。另一边随之调整，图片保持原有比例。
 
 	Import…	导入…
+	Vim Keys	Vim 键
+	Vim Keystrokes	Vim 按键序列
+	Vim keys (Normal, Insert and Visual modes)	Vim 键（普通、插入和可视模式）
+	NORMAL	普通
+	INSERT	插入
+	VISUAL	可视
+	VISUAL LINE	可视 行
+	Vim keys are on. Click to turn them off.	Vim 键已打开。单击可关闭。

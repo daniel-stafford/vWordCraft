@@ -2696,3 +2696,11 @@ preview	Title	Örnek
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Herhangi bir birimde bir boyut yazın, örneğin 5 cm veya 300 px. Diğer kenar da buna uyar, böylece resim oranlarını korur.
 
 	Import…	İçe aktar…
+	Vim Keys	Vim tuşları
+	Vim Keystrokes	Vim tuş vuruşları
+	Vim keys (Normal, Insert and Visual modes)	Vim tuşları (Normal, Ekleme ve Görsel kipler)
+	NORMAL	NORMAL
+	INSERT	EKLE
+	VISUAL	GÖRSEL
+	VISUAL LINE	GÖRSEL SATIR
+	Vim keys are on. Click to turn them off.	Vim tuşları açık. Kapatmak için tıklayın.
