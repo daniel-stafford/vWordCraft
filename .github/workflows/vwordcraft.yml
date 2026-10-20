@@ -30,6 +30,8 @@ jobs:
       CARGO_TERM_COLOR: always
       CARGO_INCREMENTAL: 0
       GH_TOKEN: ${{ github.token }}
+      # gh would otherwise pick the `upstream` remote (storytold/wordcraft).
+      GH_REPO: ${{ github.repository }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -71,6 +73,7 @@ jobs:
         if: steps.check.outputs.skip != 'true'
         with:
           key: vwordcraft-release
+          cache-on-failure: true
 
       - name: Vim tests
         if: steps.check.outputs.skip != 'true'
