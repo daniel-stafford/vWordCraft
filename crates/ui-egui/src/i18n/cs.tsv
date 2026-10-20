@@ -2766,3 +2766,11 @@ preview	Title	Ukázka
 	More tabs	Další karty
 # #3013: Insert Table of Figures
 	Include label and number	Zahrnout popisek a číslo
+	Vim Keys	Klávesy Vim
+	Vim Keystrokes	Stisky kláves Vim
+	Vim keys (Normal, Insert and Visual modes)	Klávesy Vim (režimy Normal, Insert a Visual)
+	NORMAL	NORMÁLNÍ
+	INSERT	VKLÁDÁNÍ
+	VISUAL	VIZUÁLNÍ
+	VISUAL LINE	VIZUÁLNÍ ŘÁDEK
+	Vim keys are on. Click to turn them off.	Klávesy Vim jsou zapnuté. Kliknutím je vypnete.

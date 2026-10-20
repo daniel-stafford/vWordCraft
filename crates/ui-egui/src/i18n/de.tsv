@@ -2366,3 +2366,11 @@
 	More tabs	Weitere Registerkarten
 # #3013: Insert Table of Figures
 	Include label and number	Bezeichnung und Nummer einbeziehen
+	Vim Keys	Vim-Tasten
+	Vim Keystrokes	Vim-Tastenfolge
+	Vim keys (Normal, Insert and Visual modes)	Vim-Tasten (Normal-, Einfüge- und Visuell-Modus)
+	NORMAL	NORMAL
+	INSERT	EINFÜGEN
+	VISUAL	VISUELL
+	VISUAL LINE	VISUELL ZEILE
+	Vim keys are on. Click to turn them off.	Vim-Tasten sind eingeschaltet. Zum Ausschalten klicken.

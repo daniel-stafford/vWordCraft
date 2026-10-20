@@ -2729,3 +2729,11 @@ preview	Title	Título
 	More tabs	Más pestañas
 # #3013: Insert Table of Figures
 	Include label and number	Incluir rótulo y número
+	Vim Keys	Teclas de Vim
+	Vim Keystrokes	Pulsaciones de Vim
+	Vim keys (Normal, Insert and Visual modes)	Teclas de Vim (modos Normal, Insertar y Visual)
+	NORMAL	NORMAL
+	INSERT	INSERTAR
+	VISUAL	VISUAL
+	VISUAL LINE	VISUAL LÍNEA
+	Vim keys are on. Click to turn them off.	Las teclas de Vim están activadas. Haga clic para desactivarlas.

@@ -2775,3 +2775,11 @@ template	Letter	Lettre
 	More tabs	Plus d'onglets
 # #3013: Insert Table of Figures
 	Include label and number	Inclure l’étiquette et le numéro
+	Vim Keys	Touches Vim
+	Vim Keystrokes	Frappes Vim
+	Vim keys (Normal, Insert and Visual modes)	Touches Vim (modes Normal, Insertion et Visuel)
+	NORMAL	NORMAL
+	INSERT	INSERTION
+	VISUAL	VISUEL
+	VISUAL LINE	VISUEL LIGNE
+	Vim keys are on. Click to turn them off.	Les touches Vim sont activées. Cliquez pour les désactiver.

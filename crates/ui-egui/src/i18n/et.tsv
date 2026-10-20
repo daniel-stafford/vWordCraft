@@ -2401,3 +2401,11 @@
 	More tabs	Veel vahekaarte
 # #3013: Insert Table of Figures
 	Include label and number	Lisa silt ja number
+	Vim Keys	Vimi klahvid
+	Vim Keystrokes	Vimi klahvivajutused
+	Vim keys (Normal, Insert and Visual modes)	Vimi klahvid (tavaline, lisamis- ja visuaalne režiim)
+	NORMAL	TAVALINE
+	INSERT	LISAMINE
+	VISUAL	VISUAALNE
+	VISUAL LINE	VISUAALNE RIDA
+	Vim keys are on. Click to turn them off.	Vimi klahvid on sees. Klõpsake nende väljalülitamiseks.

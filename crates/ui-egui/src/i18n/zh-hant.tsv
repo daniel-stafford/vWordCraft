@@ -2368,3 +2368,11 @@
 	More tabs	更多索引標籤
 # #3013: Insert Table of Figures
 	Include label and number	包含標籤和編號
+	Vim Keys	Vim 鍵
+	Vim Keystrokes	Vim 按鍵序列
+	Vim keys (Normal, Insert and Visual modes)	Vim 鍵（一般、插入和視覺模式）
+	NORMAL	一般
+	INSERT	插入
+	VISUAL	視覺
+	VISUAL LINE	視覺 行
+	Vim keys are on. Click to turn them off.	Vim 鍵已開啟。按一下即可關閉。

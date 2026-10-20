@@ -2795,3 +2795,11 @@ preview	Title	Tytuł
 	This document has no bookmarks.	This document has no bookmarks.
 	Type a page number, or +2 / -1.	Type a page number, or +2 / -1.
 	Wait for the print job to finish submitting before closing.	Wait for the print job to finish submitting before closing.
+	Vim Keys	Klawisze Vim
+	Vim Keystrokes	Sekwencja klawiszy Vim
+	Vim keys (Normal, Insert and Visual modes)	Klawisze Vim (tryby normalny, wprowadzania i wizualny)
+	NORMAL	NORMALNY
+	INSERT	WPROWADZANIE
+	VISUAL	WIZUALNY
+	VISUAL LINE	WIZUALNY LINIOWY
+	Vim keys are on. Click to turn them off.	Klawisze Vim są włączone. Kliknij, aby je wyłączyć.

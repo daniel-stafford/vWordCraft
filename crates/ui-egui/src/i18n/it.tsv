@@ -2799,3 +2799,11 @@ template	Letter	Lettera
 	More tabs	Altre schede
 # #3013: Insert Table of Figures
 	Include label and number	Includi etichetta e numero
+	Vim Keys	Tasti Vim
+	Vim Keystrokes	Sequenza di tasti Vim
+	Vim keys (Normal, Insert and Visual modes)	Tasti Vim (modalità Normale, Inserimento e Visuale)
+	NORMAL	NORMALE
+	INSERT	INSERISCI
+	VISUAL	VISUALE
+	VISUAL LINE	VISUALE LINEA
+	Vim keys are on. Click to turn them off.	I tasti Vim sono attivi. Fai clic per disattivarli.

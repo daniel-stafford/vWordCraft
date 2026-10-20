@@ -2367,3 +2367,11 @@
 	More tabs	その他のタブ
 # #3013: Insert Table of Figures
 	Include label and number	ラベルと番号を含める
+	Vim Keys	Vim キー
+	Vim Keystrokes	Vim キー入力
+	Vim keys (Normal, Insert and Visual modes)	Vim キー (ノーマル、挿入、ビジュアル モード)
+	NORMAL	ノーマル
+	INSERT	挿入
+	VISUAL	ビジュアル
+	VISUAL LINE	ビジュアル 行
+	Vim keys are on. Click to turn them off.	Vim キーがオンです。クリックするとオフになります。

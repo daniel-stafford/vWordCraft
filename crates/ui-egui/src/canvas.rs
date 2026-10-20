@@ -1619,9 +1619,29 @@ pub fn show(app: &mut WordApp, ui: &mut Ui) {
             // The caret glides and fades like Word's (`caret_glide`).
             let shown = app.session.sel.is_collapsed() && focused;
             let look = crate::caret_glide::look(app, ui, content_origin, &geo, bar, shown, since, on);
+            // Vim keys' Normal mode: a block over the character the next command acts on (half
+            // an em wide at a paragraph's end).
+            let block = (c.width == 0.0).then(|| wordcraft_engine::cmd::vim::block_end(&app.session)).flatten().map(|end| {
+                let x1 = layout
+                    .caret_on(&end, app.session.page_hint)
+                    .filter(|e| e.page == c.page && (e.top - c.top).abs() < 0.5 && e.x > c.x)
+                    .map_or(x + c.height * scale * 0.5, |e| pr.min.x + e.x * scale);
+                Rect::from_min_max(pos2(x, y0), pos2(x1, y1))
+            });
+            let block = block.or_else(|| {
+                (c.width == 0.0 && app.session.prefs.vim_keys && app.session.vim.mode == wordcraft_engine::cmd::vim::Mode::Normal)
+                    .then(|| Rect::from_min_max(pos2(x, y0), pos2(x + c.height * scale * 0.5, y1)))
+            });
             if shown && look.opacity > 0.0 {
                 let color = preedit_color.unwrap_or_else(|| caret_color(app));
-                painter.line_segment(look.bar, Stroke::new(1.5, color.gamma_multiply(look.opacity)));
+                match block {
+                    Some(r) => {
+                        painter.rect_filled(r, 0.0, color.gamma_multiply(0.45 * look.opacity));
+                    }
+                    None => {
+                        painter.line_segment(look.bar, Stroke::new(1.5, color.gamma_multiply(look.opacity)));
+                    }
+                }
             }
             if focused {
                 ui.ctx().request_repaint_after(std::time::Duration::from_millis(530 - (since as u64 % 530)));

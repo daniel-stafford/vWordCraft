@@ -11,7 +11,9 @@ use crate::{CmdError, CmdResult, CommandSpec, Selection, Session, p};
 pub fn specs() -> Vec<CommandSpec> {
     vec![
         CommandSpec::new("text.insert", "Type Text", "Editing", insert).params(r#"{"text": string}"#),
-        CommandSpec::new("text.newParagraph", "New Paragraph", "Editing", new_paragraph).key("Enter"),
+        CommandSpec::new("text.newParagraph", "New Paragraph", "Editing", new_paragraph)
+            .key("Enter")
+            .params(r#"{"raw"?: bool (no AutoCorrect or AutoFormat, as Vim's o and O)}"#),
         CommandSpec::new("text.lineBreak", "Line Break", "Editing", |s, _| ins_char(s, '\n')).key("Shift+Enter"),
         CommandSpec::new("text.pageBreak", "Page Break", "Insert › Pages", |s, _| ins_char(s, PAGE_BREAK)).key("Mod+Enter"),
         CommandSpec::new("text.columnBreak", "Column Break", "Layout › Breaks", |s, _| ins_char(s, COLUMN_BREAK)).key("Mod+Shift+Enter"),
@@ -571,20 +573,21 @@ fn sample_text(s: &Session) -> Option<String> {
     Some(text)
 }
 
-fn new_paragraph(s: &mut Session, _: &Value) -> CmdResult {
+fn new_paragraph(s: &mut Session, v: &Value) -> CmdResult {
     // Enter in a one-line plain text control (or a check box or list) does nothing, as in Word.
     if super::controls::refuses_paragraph(s) {
         return sel_result(s);
     }
     super::controls::prepare_edit(s)?;
-    if let Some(text) = sample_text(s) {
+    let raw = p::bool(v, "raw").unwrap_or(false);
+    if !raw && let Some(text) = sample_text(s) {
         let end = s.sel.focus.clone();
         s.sel = Selection { anchor: Pos { off: 0, ..end.clone() }, focus: end };
         type_text(s, &text)?;
         return sel_result(s);
     }
     let mut at = delete_selection(s)?;
-    let auto = border_line(s, &at).map(EnterAutoFormat::Border).or_else(|| table_line(s, &at).map(EnterAutoFormat::Table));
+    let auto = if raw { None } else { border_line(s, &at).map(EnterAutoFormat::Border).or_else(|| table_line(s, &at).map(EnterAutoFormat::Table)) };
     if let Some(auto) = auto {
         // Word: Undo right after reverts only the AutoFormat, so the typed characters come back
         // and the Enter stays. Record that plain Enter as its own undo step.
@@ -602,7 +605,7 @@ fn new_paragraph(s: &mut Session, _: &Value) -> CmdResult {
         return sel_result(s);
     }
     // Enter finishes a word like a space does ("teh" → "the", sentence capitals, links).
-    if s.sel.is_collapsed() && at.off > 0 {
+    if !raw && s.sel.is_collapsed() && at.off > 0 {
         super::tools::autocorrect_word(s, true)?;
         s.autocap.take_if(|c| c.depth == u64::MAX);
         at = s.sel.focus.clone();

@@ -2814,3 +2814,11 @@ template	Letter	Thư
 	More tabs	Các tab khác
 # #3013: Insert Table of Figures
 	Include label and number	Bao gồm nhãn và số
+	Vim Keys	Phím Vim
+	Vim Keystrokes	Chuỗi phím Vim
+	Vim keys (Normal, Insert and Visual modes)	Phím Vim (chế độ Normal, Insert và Visual)
+	NORMAL	BÌNH THƯỜNG
+	INSERT	CHÈN
+	VISUAL	TRỰC QUAN
+	VISUAL LINE	TRỰC QUAN DÒNG
+	Vim keys are on. Click to turn them off.	Phím Vim đang bật. Bấm để tắt.

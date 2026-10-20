@@ -2774,3 +2774,11 @@ preview	Title	Naslov
 	More tabs	Više kartica
 # #3013: Insert Table of Figures
 	Include label and number	Uključi oznaku i broj
+	Vim Keys	Vim tipke
+	Vim Keystrokes	Vim pritisci tipki
+	Vim keys (Normal, Insert and Visual modes)	Vim tipke (načini Normal, Insert i Visual)
+	NORMAL	NORMALNO
+	INSERT	UMETANJE
+	VISUAL	VIZUALNO
+	VISUAL LINE	VIZUALNI REDAK
+	Vim keys are on. Click to turn them off.	Vim tipke su uključene. Kliknite da ih isključite.

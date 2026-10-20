@@ -606,6 +606,11 @@ pub fn status_bar(app: &mut WordApp, ui: &mut Ui) {
                 if app.session.doc.settings.track_changes {
                     st(ui, tl!("Track Changes: On"));
                 }
+                if let Some(mode) = crate::vim::status(app)
+                    && st(ui, &mode).on_hover_text(tl!("Vim keys are on. Click to turn them off.")).clicked()
+                {
+                    let _ = app.run("vim.toggle", json!({"value": false}));
+                }
                 if app.session.prefs.overtype && st(ui, tl!("Overtype")).on_hover_text(tl!("Click to switch back to inserting")).clicked() {
                     let _ = app.run("text.overtype", json!({"value": false}));
                 }

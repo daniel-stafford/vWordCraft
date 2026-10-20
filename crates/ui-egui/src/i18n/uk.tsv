@@ -2379,3 +2379,11 @@
 	More tabs	Інші вкладки
 # #3013: Insert Table of Figures
 	Include label and number	Додавати мітку й номер
+	Vim Keys	Клавіші Vim
+	Vim Keystrokes	Натискання клавіш Vim
+	Vim keys (Normal, Insert and Visual modes)	Клавіші Vim (режими Normal, Insert і Visual)
+	NORMAL	НОРМАЛЬНИЙ
+	INSERT	ВСТАВКА
+	VISUAL	ВІЗУАЛЬНИЙ
+	VISUAL LINE	ВІЗУАЛЬНИЙ РЯДОК
+	Vim keys are on. Click to turn them off.	Клавіші Vim увімкнено. Клацніть, щоб вимкнути їх.

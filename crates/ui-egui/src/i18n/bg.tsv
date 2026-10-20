@@ -2764,3 +2764,11 @@
 	More tabs	Още раздели
 # #3013: Insert Table of Figures
 	Include label and number	Включване на етикета и номера
+	Vim Keys	Клавиши на Vim
+	Vim Keystrokes	Клавишни последователности на Vim
+	Vim keys (Normal, Insert and Visual modes)	Клавиши на Vim (режими Normal, Insert и Visual)
+	NORMAL	НОРМАЛЕН
+	INSERT	ВМЪКВАНЕ
+	VISUAL	ВИЗУАЛЕН
+	VISUAL LINE	ВИЗУАЛЕН РЕД
+	Vim keys are on. Click to turn them off.	Клавишите на Vim са включени. Щракнете, за да ги изключите.

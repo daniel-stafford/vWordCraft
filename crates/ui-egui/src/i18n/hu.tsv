@@ -2770,3 +2770,11 @@
 	More tabs	További lapok
 # #3013: Insert Table of Figures
 	Include label and number	Címkével és számmal
+	Vim Keys	Vim-billentyűk
+	Vim Keystrokes	Vim-billentyűleütések
+	Vim keys (Normal, Insert and Visual modes)	Vim-billentyűk (Normál, Beszúrás és Vizuális mód)
+	NORMAL	NORMÁL
+	INSERT	BESZÚRÁS
+	VISUAL	VIZUÁLIS
+	VISUAL LINE	VIZUÁLIS SOR
+	Vim keys are on. Click to turn them off.	A Vim-billentyűk be vannak kapcsolva. Kattintson a kikapcsolásukhoz.

@@ -2617,3 +2617,11 @@ preview	Title	제목
 	More tabs	탭 더 보기
 # #3013: Insert Table of Figures
 	Include label and number	레이블 및 번호 포함
+	Vim Keys	Vim 키
+	Vim Keystrokes	Vim 키 입력
+	Vim keys (Normal, Insert and Visual modes)	Vim 키(일반, 삽입 및 비주얼 모드)
+	NORMAL	일반
+	INSERT	삽입
+	VISUAL	비주얼
+	VISUAL LINE	비주얼 줄
+	Vim keys are on. Click to turn them off.	Vim 키가 켜져 있습니다. 클릭하면 끕니다.

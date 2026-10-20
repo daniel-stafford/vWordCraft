@@ -2802,3 +2802,11 @@ template	Letter	Brev
 	More tabs	Fler flikar
 # #3013: Insert Table of Figures
 	Include label and number	Ta med etikett och nummer
+	Vim Keys	Vim-tangenter
+	Vim Keystrokes	Vim-tangenttryckningar
+	Vim keys (Normal, Insert and Visual modes)	Vim-tangenter (lägena Normal, Infoga och Visuell)
+	NORMAL	NORMAL
+	INSERT	INFOGA
+	VISUAL	VISUELL
+	VISUAL LINE	VISUELL RAD
+	Vim keys are on. Click to turn them off.	Vim-tangenterna är på. Klicka för att stänga av dem.

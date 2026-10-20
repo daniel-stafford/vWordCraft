@@ -2772,3 +2772,11 @@ preview	Title	Örnek
 	More tabs	Diğer sekmeler
 # #3013: Insert Table of Figures
 	Include label and number	Etiketi ve numarayı ekle
+	Vim Keys	Vim tuşları
+	Vim Keystrokes	Vim tuş vuruşları
+	Vim keys (Normal, Insert and Visual modes)	Vim tuşları (Normal, Ekleme ve Görsel kipler)
+	NORMAL	NORMAL
+	INSERT	EKLE
+	VISUAL	GÖRSEL
+	VISUAL LINE	GÖRSEL SATIR
+	Vim keys are on. Click to turn them off.	Vim tuşları açık. Kapatmak için tıklayın.
