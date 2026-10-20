@@ -1,0 +1,105 @@
+# vWordCraft: every day, put the Vim branch on top of the latest upstream WordCraft, run the Vim
+# tests, build vWordCraft.app for Apple Silicon and publish it as the `daily` release, which
+# packaging/vwordcraft/update.sh installs. The rebased branch is not pushed back: a conflict or a
+# failing build makes the run fail (GitHub emails the owner), and the fix is pushed by hand.
+name: vWordCraft daily build
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Build even if upstream and the Vim branch are unchanged"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vwordcraft-daily
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'daniel-stafford/vWordCraft'
+    runs-on: macos-15
+    timeout-minutes: 150
+    env:
+      CARGO_TERM_COLOR: always
+      CARGO_INCREMENTAL: 0
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: vim
+          fetch-depth: 0
+
+      - name: Rebase the Vim branch onto upstream
+        id: sync
+        run: |
+          git config user.name "vWordCraft bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add upstream https://github.com/storytold/wordcraft.git
+          git fetch --no-tags upstream main
+          up="$(git rev-parse --short upstream/main)"
+          vim="$(git rev-parse --short HEAD)"
+          echo "id=$up-$vim" >>"$GITHUB_OUTPUT"
+          if ! git rebase upstream/main; then
+            git status
+            git rebase --abort
+            echo "::error::The Vim branch no longer applies cleanly to upstream $up; rebase it by hand and push."
+            exit 1
+          fi
+
+      - name: Skip if already built
+        id: check
+        run: |
+          built="$(curl -fsSL "https://github.com/${{ github.repository }}/releases/download/daily/build.txt" || true)"
+          if [ "$built" = "${{ steps.sync.outputs.id }}" ] && [ "${{ inputs.force }}" != "true" ]; then
+            echo "Build ${{ steps.sync.outputs.id }} is already published."
+            echo "skip=true" >>"$GITHUB_OUTPUT"
+          fi
+
+      - uses: dtolnay/rust-toolchain@stable
+        if: steps.check.outputs.skip != 'true'
+        with:
+          targets: aarch64-apple-darwin
+
+      - uses: Swatinem/rust-cache@v2
+        if: steps.check.outputs.skip != 'true'
+        with:
+          key: vwordcraft-release
+
+      - name: Vim tests
+        if: steps.check.outputs.skip != 'true'
+        run: cargo test --release --locked -p wordcraft-engine vim
+
+      - name: Build
+        if: steps.check.outputs.skip != 'true'
+        env:
+          MACOSX_DEPLOYMENT_TARGET: "11.0"
+        run: cargo build --release --locked -p wordcraft
+
+      - name: Bundle vWordCraft.app
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          mkdir -p dist
+          packaging/vwordcraft/bundle.sh target/release/wordcraft dist "${{ steps.sync.outputs.id }}"
+          ditto -c -k --keepParent dist/vWordCraft.app dist/vWordCraft-macos-arm64.zip
+          cp dist/vWordCraft.app/Contents/Resources/build.txt dist/build.txt
+
+      - name: Publish the daily release
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          notes="WordCraft upstream $(git rev-parse --short upstream/main) + Vim keys, built $(date -u '+%Y-%m-%d %H:%M UTC').
+          Install: download vWordCraft-macos-arm64.zip, unzip, move vWordCraft.app to Applications.
+          Apple Silicon only; ad-hoc signed, so a browser download needs right-click > Open the first time."
+          if ! gh release view daily >/dev/null 2>&1; then
+            gh release create daily --target vim --title "vWordCraft daily build" --notes "$notes"
+          fi
+          # Zip first, build.txt last: update.sh reads build.txt to decide whether to download.
+          gh release upload daily dist/vWordCraft-macos-arm64.zip --clobber
+          gh release upload daily dist/build.txt --clobber
+          gh release edit daily --notes "$notes"
